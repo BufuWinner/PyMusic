@@ -2,7 +2,7 @@
 Simple python file (EN or IT) that let's you search and download music using the [Spotify API](https://developer.spotify.com/) and the famous [deezloader](https://github.com/An0nimia/deezloader) library.
 
 
-How to get it working:
+### How to get it working:
 - Download the modules:
 	- spotipy ```pip3 install spotipy```
 	- deezloader ```pip3 install deezloader```
@@ -51,7 +51,7 @@ How to get it working:
 - Done, yay!:smile:
 
 
-Optional (on macOS):
+### Optional (on macOS):
 - open Terminal
 - write ```nano```
 - write:
