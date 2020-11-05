@@ -3,6 +3,10 @@ Simple python file (EN or IT) that let's you search and download music using the
 
 
 How to get it working:
+- Download the modules:
+	- spotipy ```pip install spotipy```
+	- deezloader ```pip install deezloader```
+	- requests ```pip install requests```
 - Get an ARL token from [_the deezer site_](https://www.deezer.com/) and change string at __line 142__. [Tutorial](https://www.youtube.com/watch?v=pWcG9T3WyYQ)
 
 	```python3
