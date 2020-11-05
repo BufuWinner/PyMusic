@@ -193,9 +193,9 @@ if output == standard_output:
     os.chdir(output)
     list1 = os.listdir()
     ind = None
-    for i in list1:
+    """for i in list1:
         if i != '.DS_Store' and i != 'Icon\r':
-            ind = list1.index(i)
+            ind = list1.index(i)"""
 
     folder = output + list1[ind]
     os.chdir(folder)
