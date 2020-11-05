@@ -54,10 +54,11 @@ How to get it working:
 Optional (on macOS):
 - open Terminal
 - write ```nano```
-- write ```
-	cd YOUR PYTHON DIRECTORY PATH
-	python3 YOUR_FILE_NAME.py
-	```
+- write 
+```
+cd YOUR PYTHON DIRECTORY PATH
+python3 YOUR_FILE_NAME.py
+```
  - press ctrl + x
  - press y
  - write ```CHOOSE_NAME.command``
