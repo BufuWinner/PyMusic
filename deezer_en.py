@@ -197,7 +197,7 @@ if output == standard_output:
         if i != '.DS_Store' and i != 'Icon\r':
             ind = list1.index(i)"""
 
-    folder = output + list1[ind]
+    folder = output + list1[0]
     os.chdir(folder)
     list2 = os.listdir()
     song_move = list2[0]
