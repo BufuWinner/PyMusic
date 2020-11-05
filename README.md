@@ -4,9 +4,10 @@ Simple python file (EN or IT) that let's you search and download music using the
 
 How to get it working:
 - Download the modules:
-	- spotipy ```pip install spotipy```
-	- deezloader ```pip install deezloader```
-	- requests ```pip install requests```
+	- spotipy ```pip3 install spotipy```
+	- deezloader ```pip3 install deezloader```
+	- requests ```pip3 install requests```
+
 - Get an ARL token from [_the deezer site_](https://www.deezer.com/) and change string at __line 142__. [Tutorial](https://www.youtube.com/watch?v=pWcG9T3WyYQ)
 
 	```python3
@@ -48,5 +49,22 @@ How to get it working:
 	```  
   
 - Done, yay!:smile:
+
+
+Optional (on macOS):
+- open Terminal
+- write ```nano```
+- write ```
+	cd YOUR PYTHON DIRECTORY PATH
+	python3 YOUR_FILE_NAME.py
+	```
+ - press ctrl + x
+ - press y
+ - write ```CHOOSE_NAME.command``
+ - press enter
+ - you should find a file named ```CHOOSE_NAME.command```in your current directory
+ - double click to open
+ - the Terminal opens, you should see the python file running in the window
+ - change icon, change name(you can remove .command) = perfect music downloader 'app'!
 
 The code isn't too advanced, so feel free to report any issues!
