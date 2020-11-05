@@ -1,5 +1,6 @@
 # PythonMusic
-Little python file that let's you download music using the famous deezloader library and the Spotify API.
+Little python file (EN or IT) that let's you download music using the famous deezloader library and the Spotify API.
+
 
 How to get it working:
 - Get an ARL token from [_the deezer site_](https://www.deezer.com/) and change string at __line 142__. [Tutorial](https://www.youtube.com/watch?v=pWcG9T3WyYQ)
