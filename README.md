@@ -61,9 +61,9 @@ python3 YOUR_FILE_NAME.py
 ```
  - press ctrl + x
  - press y
- - write ```CHOOSE_NAME.command``
+ - write ```CHOOSE_NAME.command```
  - press enter
- - you should find a file named ```CHOOSE_NAME.command```in your current directory
+ - you should find a file named ```CHOOSE_NAME.command``` in your current directory
  - double click to open
  - the Terminal opens, you should see the python file running in the window
  - change icon, change name(you can remove .command) = perfect music downloader 'app'!
