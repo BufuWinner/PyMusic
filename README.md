@@ -55,10 +55,10 @@ Simple python file (EN or IT) that let's you search and download music using the
 - open Terminal
 - write ```nano```
 - write:
-```
-cd YOUR PYTHON FILE PATH
-python3 YOUR_FILE_NAME.py
-```
+	```
+	cd YOUR PYTHON FILE PATH
+	python3 YOUR_FILE_NAME.py
+	```
  - press ctrl + x
  - press y
  - write ```CHOOSE_NAME.command```
