@@ -15,8 +15,8 @@ def global_search(query):
         if again:
             q = '\"' + input('= ') + '\"'
             new = None
-        auth_manager = SpotifyClientCredentials(client_id='bf9b4c04c511406886e8e952b9f68a7c',
-                                                client_secret='65e8bded9989432399e4da9ddef77eac')
+        auth_manager = SpotifyClientCredentials(client_id='your client ID',
+                                                client_secret='your client secret')
         token = auth_manager.get_access_token(as_dict=False)
         # print(token)
 
@@ -76,7 +76,7 @@ def global_search(query):
 
         # print(ind_search)
         # print(res_search)
-        final_res = input('\nWhich song (insert number, leave empty to try again, n = next, e = exit)?\n')
+        final_res = input('\nWhich track (insert number, leave empty to try again, n = next, e = exit)?\n')
         if len(final_res) == 0:
             again = True
         elif final_res == 'n':
@@ -101,7 +101,7 @@ def global_search(query):
 # DOWNLOAD INFO
 standard_output = '~/Desktop/'
 
-search_type = input('Global search (leave empty for specific search):\n')
+search_type = input('Global search (leave empty for specific search, links are accepted(album, playlist, track):\n')
 
 tracklink = None
 albumlink = None
@@ -122,7 +122,7 @@ if 'https://open.spotify.com/' in search_type:
         albumlink = False
 
 elif len(search_type) == 0:
-    song = input('Song= ')
+    song = input('Track= ')
     artist = input('Artist= ')
     tracklink = False
     albumlink = False
@@ -139,8 +139,7 @@ else:
     output = out
 
 # DEEZER DOWNLOADER
-download = deezloader.Login(
-    "90cc591f741847a0e93a2b5162df39b9ce1e0e3e35d50e138d3c29f805ccb97f75da0ac8c57219f742ceb64e6238cfeff9f50dd95eb31ea2eca6470c7e82ca1c5e4971498437b3462e3ccd494c185d8df6bcfb254b8543878299d8c84e11fc26")
+download = deezloader.Login('your ARL token here')
 if tracklink:
     download.download_trackspo(
         URL=link,
@@ -185,7 +184,7 @@ else:
             not_interface=False
         )
     except deezloader.exceptions.TrackNotFound:
-        print('Song not found :(')
+        print('Track not found :(')
 
 # File Mover
 if output == standard_output:
@@ -210,7 +209,7 @@ if output == standard_output:
     except:
         print('Couldn\'t move file :(')
         quit()
-    print('\nMoved song!')
+    print('\nMoved track!')
 
     os.rmdir(folder)
-    print('Folder deleted!\n')
+    print('Deleted folder!\n')
