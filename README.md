@@ -1,5 +1,5 @@
 # PythonMusic
-Little python file (EN or IT) that let's you download music using the famous deezloader library and the Spotify API.
+Simple python file (EN or IT) that let's you search and download music using the Spotify API and the famous deezloader library.
 
 
 How to get it working:
