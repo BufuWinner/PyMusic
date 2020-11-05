@@ -54,7 +54,7 @@ Simple python file (EN or IT) that let's you search and download music using the
 ### Optional (on macOS):
 - open Terminal
 - write ```nano```
-- write:
+- inside write:
 	```
 	cd YOUR PYTHON FILE PATH
 	python3 YOUR_FILE_NAME.py
