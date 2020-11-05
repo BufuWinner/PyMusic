@@ -54,9 +54,9 @@ How to get it working:
 Optional (on macOS):
 - open Terminal
 - write ```nano```
-- write 
+- write:
 ```
-cd YOUR PYTHON DIRECTORY PATH
+cd YOUR PYTHON FILE PATH
 python3 YOUR_FILE_NAME.py
 ```
  - press ctrl + x
