@@ -4,7 +4,6 @@ Simple python file (EN or IT) that let's you search and download music using the
 
 ### How to get it working:
 - Download the modules:
-	- spotipy ```pip3 install spotipy```
 	- deezloader ```pip3 install deezloader```
 	- requests ```pip3 install requests```
 
@@ -13,11 +12,7 @@ Simple python file (EN or IT) that let's you search and download music using the
 	```python3
 	download = deezloader.Login('your ARL token here')  # line 142
 	```
-- Create an app on the [_spotify for developers site_](https://developer.spotify.com/dashboard/) and change client_id and client_secret at __line 18__. [Tutorial](https://developer.spotify.com/documentation/web-api/quick-start/)
 
-	```python3
-	auth_manager = SpotifyClientCredentials(client_id='your id', client_secret='your secret')  # line 18
-	```
 - I recommend to change the standard output directory at __line 102__ to your desired folder.
 
 	```python3
