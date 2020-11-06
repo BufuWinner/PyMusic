@@ -185,6 +185,7 @@ else:
         )
     except deezloader.exceptions.TrackNotFound:
         print('Brano Non Trovato :(')
+        quit()
 
 # File Mover
 if output == standard_output:
