@@ -1,5 +1,5 @@
 import deezloader
-from spotipy.oauth2 import SpotifyClientCredentials
+from deezloader.utils import generate_token
 import requests
 import os
 import time
@@ -15,9 +15,7 @@ def global_search(query):
         if again:
             q = '\"' + input('= ') + '\"'
             new = None
-        auth_manager = SpotifyClientCredentials(client_id='il tuo client id',
-                                                client_secret='il tuo client secret')
-        token = auth_manager.get_access_token(as_dict=False)
+        token = generate_token()
         # print(token)
 
         # My Search
