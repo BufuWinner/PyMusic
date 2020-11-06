@@ -185,6 +185,7 @@ else:
         )
     except deezloader.exceptions.TrackNotFound:
         print('Track not found :(')
+        quit()
 
 # File Mover
 if output == standard_output:
