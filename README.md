@@ -1,5 +1,5 @@
 # PythonMusic
-Simple python file (EN or IT) that let's you search and download music using the [Spotify API](https://developer.spotify.com/) and the famous [deezloader](https://github.com/An0nimia/deezloader) library.
+Simple python file (EN or IT) that let's you search and download high quality music using the [Spotify API](https://developer.spotify.com/) and the famous [deezloader](https://github.com/An0nimia/deezloader) library.
 
 
 ### How to get it working:
@@ -19,29 +19,10 @@ Simple python file (EN or IT) that let's you search and download music using the
 	standard_output = '~/Desktop/'  # line 102
 	```
 	
-- If you need it I created from __line 191 to 216__ a simple file mover(moves song out of album folder), if not delete those lines.
-  You'll need to modify it if you have more then one file/directory in the output directory.
-  
+- If you need it I created from __line 191 to 216__ a simple file mover (moves song out of album folder and renames with a number), else change the option at __line 100__ 
 	```python3
-	# File Mover from line 191 to end of file
-	if output == standard_output:
-		time.sleep(2)
-		os.chdir(output)
-		list1 = os.listdir()
-		folder = output + list1[0]
-		os.chdir(folder)
-		list2 = os.listdir()
-		song_move = list2[0]
-		try:
-			os.rename(song_move, output + 'music.mp3')
-		except:
-			print('Couldn\'t move file :(')
-			quit()
-		print('\nMoved song!')
-
-		os.rmdir(folder)
-		print('Folder deleted!\n')
-	```  
+	file_mover = True  # line 100, put False to disable
+	```
   
 - Done, yay!:smile:
  
