@@ -45,4 +45,4 @@ Simple python file (EN or IT) that let's you search and download high quality mu
  - change icon, change name(you can remove '.command') = perfect music downloader!:smile:
  
  
-The code isn't too advanced, so feel free to report any issues!
+The code isn't too advanced and was only tested on macOS, feel free to report any issues!
