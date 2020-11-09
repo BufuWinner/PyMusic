@@ -162,8 +162,9 @@ elif albumlink:
             recursive_quality=True,
             recursive_download=False,
             not_interface=False,
-            zips=True
+            zips=False
         )
+        file_mover = False
     except(deezloader.exceptions.TrackNotFound, deezloader.exceptions.NoDataApi, deezloader.exceptions.InvalidLink):
         print('Brano Non Trovato :(\n')
         quit()
@@ -177,8 +178,9 @@ elif playlink:
             recursive_quality=True,
             recursive_download=False,
             not_interface=False,
-            zips=True
+            zips=False
         )
+        file_mover = False
     except(deezloader.exceptions.TrackNotFound, deezloader.exceptions.NoDataApi, deezloader.exceptions.InvalidLink):
         print('Brano Non Trovato :(\n')
         quit()
