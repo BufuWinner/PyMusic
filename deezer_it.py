@@ -2,7 +2,7 @@ import deezloader
 from deezloader.utils import generate_token
 import requests
 import os
-import time
+import glob
 
 
 def global_search(query):
@@ -97,9 +97,10 @@ def global_search(query):
 
 
 # DOWNLOAD INFO
-standard_output = '~/Desktop'
+standard_output = '/Desktop'
+file_mover = True
 
-search_type = input('Ricerca globale (lasciare vuoto per ricerca specifica, link accettati(album, playlist, brano):\n')
+search_type = input('Ricerca globale (lasciare vuoto per ricerca specifica):\n')
 
 tracklink = None
 albumlink = None
@@ -137,38 +138,50 @@ else:
     output = out
 
 # DEEZER DOWNLOADER
-download = deezloader.Login("il tuo ARl token")
+download = deezloader.Login("il tuo ARL token")
 if tracklink:
-    download.download_trackspo(
-        URL=link,
-        output=output,
-        quality="MP3_320",
-        recursive_quality=True,
-        recursive_download=False,
-        not_interface=False
-    )
+    try:
+        download.download_trackspo(
+            URL=link,
+            output=output,
+            quality="MP3_320",
+            recursive_quality=True,
+            recursive_download=False,
+            not_interface=False
+        )
+    except(deezloader.exceptions.TrackNotFound, deezloader.exceptions.NoDataApi, deezloader.exceptions.InvalidLink):
+        print('Brano Non Trovato :(\n')
+        quit()
 
 elif albumlink:
-    download.download_albumspo(
-        URL=link,
-        output=output,
-        quality="MP3_320",
-        recursive_quality=True,
-        recursive_download=False,
-        not_interface=False,
-        zips=True
-    )
+    try:
+        download.download_albumspo(
+            URL=link,
+            output=output,
+            quality="MP3_320",
+            recursive_quality=True,
+            recursive_download=False,
+            not_interface=False,
+            zips=True
+        )
+    except(deezloader.exceptions.TrackNotFound, deezloader.exceptions.NoDataApi, deezloader.exceptions.InvalidLink):
+        print('Brano Non Trovato :(\n')
+        quit()
 
 elif playlink:
-    download.download_playlistspo(
-        URL=link,
-        output=output,
-        quality="MP3_320",
-        recursive_quality=True,
-        recursive_download=False,
-        not_interface=False,
-        zips=True
-    )
+    try:
+        download.download_playlistspo(
+            URL=link,
+            output=output,
+            quality="MP3_320",
+            recursive_quality=True,
+            recursive_download=False,
+            not_interface=False,
+            zips=True
+        )
+    except(deezloader.exceptions.TrackNotFound, deezloader.exceptions.NoDataApi, deezloader.exceptions.InvalidLink):
+        print('Brano Non Trovato :(\n')
+        quit()
 
 else:
     try:
@@ -181,32 +194,27 @@ else:
             recursive_download=False,
             not_interface=False
         )
-    except deezloader.exceptions.TrackNotFound:
-        print('Brano Non Trovato :(')
+    except(deezloader.exceptions.TrackNotFound, deezloader.exceptions.NoDataApi):
+        print('Brano Non Trovato :(\n')
         quit()
 
 # File Mover
-if output == standard_output:
-    time.sleep(2)
-    os.chdir(output)
-    list1 = os.listdir()
-    ind = None
-    """for i in list1:
-        if i != '.DS_Store' and i != 'Icon\r':
-            ind = list1.index(i)"""
-
-    folder = output + list1[0]
+if file_mover:
+    files = glob.glob(f'{output}/*')
+    folder = max(files, key=os.path.getmtime)
     os.chdir(folder)
     list2 = os.listdir()
     song_move = list2[0]
-    """song_move2 = song_move1.replace(' ', '\\ ')
-    song_move3 = song_move2.replace('(', '\\(')
-    song_move4 = song_move3.replace(')', '\\)')"""
+    number = 1
+    for _ in range(len(files)):
+        if os.path.isfile(f'{output}/{number}.mp3'):
+            number += 1
+        else:
+            break
     try:
-        # os.system(f'mv {song_move4} {output}music.mp3)
-        os.rename(song_move, output + 'music.mp3')
+        os.rename(song_move, f'{output}/{number}.mp3')
     except:
-        print('Couldn\'t move file :(')
+        print('Brano non spostabile :(')
         quit()
     print('\nBrano spostato!')
 
