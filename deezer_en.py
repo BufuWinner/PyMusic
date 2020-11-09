@@ -164,6 +164,7 @@ elif albumlink:
             not_interface=False,
             zips=True
         )
+        file_mover = False
     except(deezloader.exceptions.TrackNotFound, deezloader.exceptions.NoDataApi, deezloader.exceptions.InvalidLink):
         print('Track not found :(\n')
         quit()
@@ -179,6 +180,7 @@ elif playlink:
             not_interface=False,
             zips=True
         )
+        file_mover = False
     except(deezloader.exceptions.TrackNotFound, deezloader.exceptions.NoDataApi, deezloader.exceptions.InvalidLink):
         print('Track not found :(\n')
         quit()
