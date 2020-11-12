@@ -40,6 +40,7 @@ Simple python file (EN or IT) that let's you search and download high quality mu
  - write ```CHOOSE_NAME.command```
  - press enter
  - you should find a file named ```CHOOSE_NAME.command``` in your current directory
+ - (in terminal) write ```chmod +x PATH_TO_NEW_FILE.command``` to grant permission to the file
  - double click to open
  - the Terminal opens, you should see the downloder running in the window
  - change icon, change name(you can remove '.command') = perfect music downloader!:smile:
