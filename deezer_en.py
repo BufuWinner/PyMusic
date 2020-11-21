@@ -6,7 +6,7 @@ import glob
 
 
 def global_search(query):
-    global final_res, ind_search, res_search, link_search
+    global final_res, ind_search, res_search, link_search, links
     q = '\"' + query + '\"'
     offset = 0
     again = False
@@ -28,7 +28,6 @@ def global_search(query):
             'q': q,
             'type': 'track',
             'limit': 5,
-            'market': 'IT',
             'offset': offset
         }
 
@@ -46,31 +45,20 @@ def global_search(query):
             again = True
             continue
 
-        rawres = []
-
+        index = 1
         for sg in response['tracks']['items']:
-            rawres.append(sg['artists'][0]['name'])
-            rawres.append(sg['name'])
+            artist = sg['artists'][0]['name']
+            song = sg['name']
+            print(f'{index}) {artist} - {song}')
+            index += 1
 
-        res_search = {rawres[i]: rawres[i + 1] for i in range(0, len(rawres), 2)}
-        # print(f'\n{res}')
+        # print(res)
         ind = 1
-        rawind = []
-
-        for key in res_search.keys():
-            print(f'{ind}) {key} - {res_search[key]}')
-            rawind.append(ind)
-            rawind.append(key)
-            ind += 1
-
-        ind_search = {rawind[i]: rawind[i + 1] for i in range(0, len(rawind), 2)}
-        rawlink = []
-
+        links = {}
         for link in response['tracks']['items']:
-            rawlink.append(link['name'])
-            rawlink.append(link['external_urls']['spotify'])
-
-        link_search = {rawlink[i]: rawlink[i + 1] for i in range(0, len(rawlink), 2)}
+            url = link['external_urls']['spotify']
+            links.setdefault(ind, url)
+            ind += 1
 
         # print(ind_search)
         # print(res_search)
@@ -79,21 +67,19 @@ def global_search(query):
             again = True
         elif final_res == 'n':
             offset += 5
+            again = False
         elif final_res == 'e':
             print('\nOk, goodbye!')
-            exit()
-        elif int(final_res) not in ind_search.keys():
+            quit()
+        elif int(final_res) not in range(index):
             print('Number outrange :(')
             continue
         else:
             break
 
-    index = int(final_res)
-    artist = ind_search[index]
-    song = res_search[artist]
-    link = link_search[song]
+    link = links[int(final_res)]
 
-    return artist, song, link
+    return link
 
 
 # DOWNLOAD INFO
@@ -101,7 +87,6 @@ standard_output = '/Desktop'
 file_mover = True
 
 search_type = input('Global search (leave empty for specific search, links are accepted(album, playlist, track):\n')
-
 tracklink = None
 albumlink = None
 playlink = None
@@ -127,7 +112,7 @@ elif len(search_type) == 0:
     albumlink = False
 
 else:
-    _, _, link = global_search(search_type)
+    link = global_search(search_type)
 
     tracklink = True
     albumlink = False
@@ -162,7 +147,7 @@ elif albumlink:
             recursive_quality=True,
             recursive_download=False,
             not_interface=False,
-            zips=True
+            zips=False
         )
         file_mover = False
     except(deezloader.exceptions.TrackNotFound, deezloader.exceptions.NoDataApi, deezloader.exceptions.InvalidLink):
@@ -178,7 +163,7 @@ elif playlink:
             recursive_quality=True,
             recursive_download=False,
             not_interface=False,
-            zips=True
+            zips=False
         )
         file_mover = False
     except(deezloader.exceptions.TrackNotFound, deezloader.exceptions.NoDataApi, deezloader.exceptions.InvalidLink):
