@@ -19,7 +19,7 @@ Simple python file (EN or IT) that let's you search and download high quality mu
 	standard_output = '/Desktop'  # line 86
 	```
 	
-- If you need it I created from __line 188 to 210__ a simple file mover (moves song out of album folder and renames with a number), else change the option at __line 87__ .
+- If you need it I created from __line 188 to 210__ a simple file mover (moves song out of album folder and renames with a number), else change the option at __line 87__.
 	```python3
 	file_mover = True  # line 87, put False to disable
 	```
