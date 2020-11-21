@@ -5,8 +5,9 @@ import os
 import glob
 
 
+
 def global_search(query):
-    global final_res, ind_search, res_search, link_search
+    global final_res, ind_search, res_search, link_search, links
     q = '\"' + query + '\"'
     offset = 0
     again = False
@@ -28,7 +29,6 @@ def global_search(query):
             'q': q,
             'type': 'track',
             'limit': 5,
-            'market': 'IT',
             'offset': offset
         }
 
@@ -46,31 +46,20 @@ def global_search(query):
             again = True
             continue
 
-        rawres = []
-
+        index = 1
         for sg in response['tracks']['items']:
-            rawres.append(sg['artists'][0]['name'])
-            rawres.append(sg['name'])
+            artist = sg['artists'][0]['name']
+            song = sg['name']
+            print(f'{index}) {artist} - {song}')
+            index += 1
 
-        res_search = {rawres[i]: rawres[i + 1] for i in range(0, len(rawres), 2)}
-        # print(f'\n{res}')
+        # print(res)
         ind = 1
-        rawind = []
-
-        for key in res_search.keys():
-            print(f'{ind}) {key} - {res_search[key]}')
-            rawind.append(ind)
-            rawind.append(key)
-            ind += 1
-
-        ind_search = {rawind[i]: rawind[i + 1] for i in range(0, len(rawind), 2)}
-        rawlink = []
-
+        links = {}
         for link in response['tracks']['items']:
-            rawlink.append(link['name'])
-            rawlink.append(link['external_urls']['spotify'])
-
-        link_search = {rawlink[i]: rawlink[i + 1] for i in range(0, len(rawlink), 2)}
+            url = link['external_urls']['spotify']
+            links.setdefault(ind, url)
+            ind += 1
 
         # print(ind_search)
         # print(res_search)
@@ -79,29 +68,26 @@ def global_search(query):
             again = True
         elif final_res == 'n':
             offset += 5
+            again = False
         elif final_res == 'e':
             print('\nOk, alla prossima!')
-            exit()
-        elif int(final_res) not in ind_search.keys():
+            quit()
+        elif int(final_res) not in range(index):
             print('Numero invalido :(')
             continue
         else:
             break
 
-    index = int(final_res)
-    artist = ind_search[index]
-    song = res_search[artist]
-    link = link_search[song]
+    link = links[int(final_res)]
 
-    return artist, song, link
+    return link
 
 
 # DOWNLOAD INFO
-standard_output = '/Desktop'
+standard_output = '/Users/stefamily/Documents/Convertitore'
 file_mover = True
 
 search_type = input('Ricerca globale (lasciare vuoto per ricerca specifica):\n')
-
 tracklink = None
 albumlink = None
 playlink = None
@@ -127,7 +113,7 @@ elif len(search_type) == 0:
     albumlink = False
 
 else:
-    _, _, link = global_search(search_type)
+    link = global_search(search_type)
 
     tracklink = True
     albumlink = False
@@ -138,7 +124,7 @@ else:
     output = out
 
 # DEEZER DOWNLOADER
-download = deezloader.Login("il tuo ARL token")
+download = deezloader.Login("90cc591f741847a0e93a2b5162df39b9ce1e0e3e35d50e138d3c29f805ccb97f75da0ac8c57219f742ceb64e6238cfeff9f50dd95eb31ea2eca6470c7e82ca1c5e4971498437b3462e3ccd494c185d8df6bcfb254b8543878299d8c84e11fc26")
 if tracklink:
     try:
         download.download_trackspo(
@@ -222,4 +208,3 @@ if file_mover:
 
     os.rmdir(folder)
     print('Cartella eliminata!\n')
-    print('te')
