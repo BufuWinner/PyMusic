@@ -222,3 +222,4 @@ if file_mover:
 
     os.rmdir(folder)
     print('Cartella eliminata!\n')
+    print('te')
