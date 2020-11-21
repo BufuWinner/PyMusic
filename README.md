@@ -16,7 +16,7 @@ Simple python file (EN or IT) that let's you search and download high quality mu
 - I recommend to change the standard output directory at __line 100__ to your desired folder.
 
 	```python3
-	standard_output = '~/Desktop/'  # line 100
+	standard_output = '/Desktop'  # line 100
 	```
 	
 - If you need it I created from __line 204 to 224__ a simple file mover (moves song out of album folder and renames with a number), else change the option at __line 101__ 
