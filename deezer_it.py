@@ -5,7 +5,6 @@ import os
 import glob
 
 
-
 def global_search(query):
     global final_res, ind_search, res_search, link_search, links
     q = '\"' + query + '\"'
