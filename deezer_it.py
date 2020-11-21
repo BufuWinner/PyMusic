@@ -83,7 +83,7 @@ def global_search(query):
 
 
 # DOWNLOAD INFO
-standard_output = '/Users/stefamily/Documents/Convertitore'
+standard_output = '/Desktop'
 file_mover = True
 
 search_type = input('Ricerca globale (lasciare vuoto per ricerca specifica):\n')
@@ -123,7 +123,7 @@ else:
     output = out
 
 # DEEZER DOWNLOADER
-download = deezloader.Login("90cc591f741847a0e93a2b5162df39b9ce1e0e3e35d50e138d3c29f805ccb97f75da0ac8c57219f742ceb64e6238cfeff9f50dd95eb31ea2eca6470c7e82ca1c5e4971498437b3462e3ccd494c185d8df6bcfb254b8543878299d8c84e11fc26")
+download = deezloader.Login("il tuo ARL token")
 if tracklink:
     try:
         download.download_trackspo(

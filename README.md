@@ -7,21 +7,21 @@ Simple python file (EN or IT) that let's you search and download high quality mu
 	- deezloader ```pip3 install deezloader```
 	- requests ```pip3 install requests```
 
-- Get an ARL token from [_the deezer site_](https://www.deezer.com/) and change string at __line 141__. [Tutorial](https://www.youtube.com/watch?v=pWcG9T3WyYQ)
+- Get an ARL token from [_the deezer site_](https://www.deezer.com/) and change string at __line 126__. [Tutorial](https://www.youtube.com/watch?v=pWcG9T3WyYQ)
 
 	```python3
-	download = deezloader.Login('your ARL token here')  # line 141
+	download = deezloader.Login('your ARL token here')  # line 126
 	```
 
-- I recommend to change the standard output directory at __line 100__ to your desired folder.
+- I recommend to change the standard output directory at __line 86__ to your desired folder.
 
 	```python3
-	standard_output = '/Desktop'  # line 100
+	standard_output = '/Desktop'  # line 86
 	```
 	
-- If you need it I created from __line 204 to 224__ a simple file mover (moves song out of album folder and renames with a number), else change the option at __line 101__ 
+- If you need it I created from __line 188 to 210__ a simple file mover (moves song out of album folder and renames with a number), else change the option at __line 87__ 
 	```python3
-	file_mover = True  # line 101, put False to disable
+	file_mover = True  # line 87, put False to disable
 	```
   
 - Done, yay!:smile:
