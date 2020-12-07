@@ -65,6 +65,7 @@ def global_search(query):
         final_res = input('\nWhich track (insert number, leave empty to try again, n = next, e = exit)?\n')
         if len(final_res) == 0:
             again = True
+            offset = 0
         elif final_res == 'n':
             offset += 5
             again = False
