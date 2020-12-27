@@ -3,7 +3,7 @@ Simple python file (EN or IT) that let's you search and download high quality mu
 
 
 ### How to get it working:
-- Download the pyhton file in the desired language and the settings.txt file and put them in the same folder
+- Download the python file in the desired language and the settings.txt file and put them in the same folder
 
 - Download the modules:
 	- deezloader ```pip3 install deezloader```
