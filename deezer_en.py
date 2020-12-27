@@ -112,7 +112,7 @@ def settings():
                     lines.pop(1)
                     lines.insert(1, new)
             elif setting == '3':
-                path = input('Inserisci il nuovo percorso=\n')
+                path = input('Insert new path=\n')
                 lines.pop(2)
                 lines.insert(2, f'3) output = {path}\n')
             elif setting == '4':
