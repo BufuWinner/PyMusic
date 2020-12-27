@@ -72,7 +72,7 @@ def global_search(query):
         elif final_res == 'e':
             print('\nOk, goodbye!')
             quit()
-        elif final_res not in range(index) or not final_res.isdigit():
+        elif final_res not in range(index):
             print('Number outrange :(')
             continue
         else:
