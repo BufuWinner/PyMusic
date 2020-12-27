@@ -208,7 +208,7 @@ while True:
         output = check_output(out)
 
     # DEEZER DOWNLOADER
-    download = deezloader.Login("il tuo ARL token")
+    download = deezloader.Login("your ARL token here")
     if tracklink:
         try:
             download.download_trackspo(
