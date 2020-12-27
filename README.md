@@ -9,10 +9,10 @@ Simple python file (EN or IT) that let's you search and download high quality mu
 	- deezloader ```pip3 install deezloader```
 	- requests ```pip3 install requests```
 
-- Get an ARL token from [_the deezer site_](https://www.deezer.com/) and change string at __line 127__. [Tutorial](https://www.youtube.com/watch?v=pWcG9T3WyYQ)
+- Get an ARL token from [_the deezer site_](https://www.deezer.com/) and change string at __line 211__. [Tutorial](https://www.youtube.com/watch?v=pWcG9T3WyYQ)
 
 	```python3
-	download = deezloader.Login('your ARL token here')  # line 127
+	download = deezloader.Login('your ARL token here')  # line 211
 	```
 
 - I recommend to change the standard output directory using the settings menu accesible by writing ```--options``` in the global search and changing the output
