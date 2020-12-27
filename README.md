@@ -3,6 +3,8 @@ Simple python file (EN or IT) that let's you search and download high quality mu
 
 
 ### How to get it working:
+- Download the pyhton file in the desired language and the settings.txt file and put them in the same folder
+
 - Download the modules:
 	- deezloader ```pip3 install deezloader```
 	- requests ```pip3 install requests```
@@ -13,19 +15,44 @@ Simple python file (EN or IT) that let's you search and download high quality mu
 	download = deezloader.Login('your ARL token here')  # line 127
 	```
 
-- I recommend to change the standard output directory at __line 87__ to your desired folder.
+- I recommend to change the standard output directory using the settings menu accesible by writing ```--options``` in the global search and changing the output
+path by inserting 3. 
 
 	```python3
-	standard_output = '/Desktop'  # line 87
+	Global search (leave empty for specific search, --options to enter the settings):
+	--options
+	1) repeat = False
+	2) file_mover = True
+	3) output = Desktop
+	4) token
+	Which option do you want to change? (e = exit)
+	3
+	Insert new path=
 	```
 	
-- If you need it I created from __line 189 to 211__ a simple file mover (moves song out of album folder and renames with a number), else change the option at __line 88__.
-	```python3
-	file_mover = True  # line 87, put False to disable
-	```
+- In the menu you can also choose wether to enable the file mover (moves song out of album folder and renames with a number) or the repeat option (the script loops letting you download multiple songs).
   
 - Done, yay!:smile:
- 
+
+### How to use:
+This is the structure:
+
+- Global search --> query / empty (specific search) / --options (settings menu)
+	- Choose song --> number (from 1 to 5) / n (continue search list) / e (exit script)
+	- Change output --> empty (uses the settings output) / path to folder
+		- Folder doesn't exist --> y (create it) / n (insert new path)
+	- Download
+- Specific search
+	- Track
+	- Artist
+	- Download
+- Settings menu
+	- Repeat (True / False)
+	- File mover (True / False)
+	- Output
+		- change default output path
+	- Token (prints spotify API token)
+	
  
 ### Optional (on macOS):
 - open Terminal
