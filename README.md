@@ -18,7 +18,7 @@ Simple python file (EN or IT) that let's you search and download high quality mu
 - I recommend to change the standard output directory using the settings menu accesible by writing ```--options``` in the global search and changing the output
 path by inserting 3. 
 
-	```python3
+	```
 	Global search (leave empty for specific search, --options to enter the settings):
 	--options
 	1) repeat = False
