@@ -47,11 +47,7 @@ This is the structure:
 	- Artist
 	- Download
 - Settings menu
-	- Repeat (True / False)
-	- File mover (True / False)
-	- Output
-		- change default output path
-	- Token (prints spotify API token)
+	- Choose option --> 1 (repeat, T / F) / 2 (file mover, T / F) / 3 (output path, insert new path) / 4 (print spotify API token)
 	
  
 ### Optional (on macOS):
