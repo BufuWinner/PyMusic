@@ -1,4 +1,4 @@
-1) repeat = True
+1) repeat = False
 2) file_mover = True
 3) output = Desktop
 4) token
