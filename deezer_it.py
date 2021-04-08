@@ -343,7 +343,7 @@ while True:
         except:
             print('Brano non spostabile :(')
             quit()"""
-
+        
         try:
             os.rename(song_move, f'{output}/{song_move}')
         except:
