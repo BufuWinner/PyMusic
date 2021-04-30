@@ -4,7 +4,7 @@ Simple python file (EN or IT) that let's you search and download high quality mu
 
 ### How to get it working:
 - Download the python file in the desired language and the settings.txt file and put them in the same folder
-- Otherwise [__DOWNLOAD THE NEW EXECUTABLE__](https://github.com/BufuWinner/PythonMusic/releases/tag/%40master), no python needed!
+- Otherwise [__DOWNLOAD THE NEW EXECUTABLE__](https://github.com/BufuWinner/PythonMusic/releases/tag/%401.0), no python needed!
 
 - Download the modules:
 	- deezloader ```pip3 install deezloader```
@@ -27,7 +27,7 @@ Simple python file (EN or IT) that let's you search and download high quality mu
 	Insert new path=
 	```
 	
-- In the menu you can also choose wether to enable the ```file mover``` (moves song out of album folder and renames with a number) or the ```repeat``` option (the script loops letting you download multiple songs).
+- In the menu you can also choose wether to enable the ```file mover``` (moves song out of album folder) or the ```repeat``` option (the script loops letting you download multiple songs).
   
 - Done, yay!:smile:
 
@@ -78,7 +78,7 @@ This is the structure:
 	python YOUR_FILE_NAME.py
 	```
 - save file as ```CHOOSE_A_NAME.cmd```
-- create a shortcut and write:
+- create a shortcut (right click in folder -> new -> shortcut) and write:
 	```
 	cmd /c "PATH_TO_CMD_FILE"
 	```
