@@ -143,7 +143,7 @@ def get_settings():
 
 def check_output(output):
     if not os.path.isdir(output):
-        a = input('The given output folder doesn\'t exist, do you want to create it? (y/n)\n')
+        a = input('The given output folder doesn\'t exist,, do you want to create it? (y/n)\n')
         if a == 'y':
             checked = output
         elif a == 'n':
