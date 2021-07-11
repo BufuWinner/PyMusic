@@ -1,6 +1,7 @@
 # PyMusic
 Simple python file (EN or IT) that let's you search and download high quality music using the [Spotify API](https://developer.spotify.com/) and the famous [deezloader](https://github.com/An0nimia/deezloader) library.
 
+[![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/organization/repository)
 
 ### How to get it working:
 - Download the python file in the desired language and the settings.txt file and put them in the same folder
